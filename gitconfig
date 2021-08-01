@@ -1,0 +1,112 @@
+[user]
+	email = matthias@cantinaconsulting.com
+	name = Matthias Ferber
+[core]
+	editor = code -nw
+[push]
+	default = simple
+[alias]
+	# list aliases
+	# (before escaping some backslashes, this looks something like the following:)
+	#   la = "!git config -l | grep alias | cut -c 7- | sed -e \"s/^\([^=]*\)=/$(printf '\033[33;1m')\1$(printf '\033[0m') /\""
+	la = "!echo; git config -l | grep alias | cut -c 7- | sed -e \"s/^\\([^=]*\\)=/$(printf '\\033[33;1m')\\1$(printf '\\033[0m') /\"; echo"
+
+	# basic shorthand commands
+	stat = status
+	st = status -s
+	co = checkout
+	ci = commit
+	b = branch
+	d = diff
+	dc = diff --cached
+	dn = diff --name-only
+	a = add -p
+	fpush = push --force-with-lease
+	prune = fetch --prune
+	pst = pull --rebase --autostash
+	ff = merge --ff-only
+	sl = stash list
+	sa = "!f() { git stash apply \"stash@{$1}\"; }; f"
+	ss = stash save
+	sp = stash pop
+	sdiff = stash show -p stash@{0}
+	mt = mergetool
+	sha = log --pretty=format:'%h' -n 1
+
+	# logs
+	l = log --graph --all --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset %C(white)%s %C(green)(%cr) %C(bold blue)%an%Creset'
+	lb = log --oneline --decorate --graph
+	hist = log --pretty=format:%s
+	histd = log --pretty=format:'%ci    %s'
+	
+	# list branches chronologically by last update, most recently updated branch at the top
+	recent = "!f() { git branch -a --sort -committerdate --color -vv| head ${1+-$1}; }; f "
+
+	# which branch am I on?
+	wb = rev-parse --abbrev-ref HEAD
+
+	# push new branch to origin for the first time
+	pushb = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+
+	# list branches that are merged into HEAD (i.e. those whose tips are reachable in HEAD's history)
+	merged = branch --merged
+
+	# list branches that are merged into develop, master, or main, and are therefore purgeable
+	purgeable = "!git branch --merged | egrep -v '^..(develop|master|main)$' | sed s/^..// | paste -s -d' ' -"
+
+	# when did HEAD diverge from the given branch?
+	whenb = "!f() { BASE=`git merge-base head \"$1\"`; git log -n 1 $BASE; }; f "
+
+	# show changes made in $2 (defaults to current branch) since it diverged from $1
+	delta="!f() { git diff $(git merge-base \"$1\" \"${2:-head}\")..\"${2:-head}\"; }; f"
+	deltatool="!f() { git difftool -y $(git merge-base \"$1\" \"${2:-head}\")..\"${2:-head}\"; }; f"
+
+	# check out the last revision of a branch before a particular time
+	cobefore = "!echo git checkout git rev-list -1 --before=\"$1\" \"$2\""
+
+	# git blame for the immediate parent of the specified commit
+	blamebefore = "!f() { git blame $1^ -- $2; }; f"
+
+	# create a temporary backup branch, user and timestamped
+	tmpb = "!f() { BRANCHNAME=backup/`whoami`-`date +'%G-%m-%d_%H-%M-%S'`; git branch $BRANCHNAME; echo "Created branch $BRANCHNAME"; }; f"
+
+	# create a temporary backup branch before starting a rebase, timestamped
+	tagrebase = "!f() { BRANCHNAME=backup-before-rebase/`git rev-parse --abbrev-ref HEAD`-`date +'%G-%m-%d_%H-%M-%S'`; git branch $BRANCHNAME; echo "Created branch $BRANCHNAME"; }; f"
+
+	# amend the last commit, updating the author date
+	amendd = !git commit --amend --date="$(date +%s)"
+
+	# Ignore selected files in diffs (flags errors when incoming changes are found)
+	#   - git ig <file...>: ignore the files
+	#   - git igx <file...>: stop ignoring the files
+	#   - git iglist: list all currently ignored files
+	ig = update-index --skip-worktree
+	igx = update-index --no-skip-worktree
+	iglist = "! git ls-files -v | grep '^S' | sed 's/^S //g'"
+[color]
+	ui = true
+[color "branch"]
+	upstream = yellow
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[credential]
+	helper = osxkeychain
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

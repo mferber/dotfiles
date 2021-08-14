@@ -9,25 +9,29 @@ function main {
 
 function install {
     DOTFILES_DIR="$(resolve_script_dir)/"
-    SRC="${DOTFILES_DIR}src/$1"
+    SYMLINK_LOCATION=$2
+    SYMLINK_TARGET="${DOTFILES_DIR}src/$1"
+    SYMLINK_LOCATION_DISPLAY=$(shorten_path $SYMLINK_LOCATION)
+    SYMLINK_TARGET_DISPLAY=$(shorten_path $SYMLINK_TARGET)
     red="\033[0;91m"
     green="\033[0;92m"
     reset="\033[0m"
 
-    if [ -L $2 ]; then
-        if [ "$SRC" = $(readlink $2) ]; then
-            echo -e "${green}✓ $2:${reset} symlink verified -> $SRC"
+    if [ -L $SYMLINK_LOCATION ]; then
+        ACTUAL_SYMLINK_TARGET=$(readlink $SYMLINK_LOCATION)
+        if [ "$ACTUAL_SYMLINK_TARGET" = "${SYMLINK_TARGET}" ]; then
+            echo -e "${green}✓ $SYMLINK_LOCATION_DISPLAY:${reset} verified symlink -> $SYMLINK_TARGET_DISPLAY"
         else
-            echo -e "${red}𐄂 $2:${reset} already symlinked -> $(readlink $2)"
+            echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} conflicting symlink exists -> $(shorten_path $ACTUAL_SYMLINK_TARGET)"
         fi
-    elif [ -e $2 ]; then
-        echo -e "${red}𐄂 $2:${reset} file exists at this location"
+    elif [ -e $SYMLINK_LOCATION ]; then
+        echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} file exists at this location"
     else
-        ln -s "$SRC" "$2"
+        ln -s "$SYMLINK_TARGET" "$SYMLINK_LOCATION"
         if [ "$?" = "0" ]; then
-            echo -e "${green}✓ $2:${reset} installed symlink -> $SRC"
+            echo -e "${green}✓ $SYMLINK_LOCATION_DISPLAY:${reset} installed symlink => $SYMLINK_TARGET_DISPLAY"
         else
-            echo -e "${red}𐄂 $2:${reset} could not create symlink at $2"
+            echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} could not create symlink at $SYMLINK_LOCATION_DISPLAY"
         fi
     fi
 }
@@ -43,6 +47,11 @@ function resolve_script_dir {
         [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" 
     done
     echo "$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+}
+
+function shorten_path {
+    ESCAPED_HOME_RE=$(echo $HOME | sed -e 's/[]\/$*.^[]/\\&/g');
+    echo $1 | sed -e "s/^$ESCAPED_HOME_RE/~/"
 }
 
 main

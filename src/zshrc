@@ -17,14 +17,22 @@ setopt AUTO_NAME_DIRS
 HISTSIZE=200
 
 # Command completion
-source ~/.zsh/npm_autocomplete.sh
+if [ -f  ~/.zsh/npm_autocomplete.sh ]; then
+  source ~/.zsh/npm_autocomplete.sh
+else
+  echo "\033[0;91mWARNING\033[0m: .zsh/npm_autocomplete.sh not found; npm autocompletion won't work correctly"
+fi
 
 # Default editors
 export EDITOR="/Users/matthias/bin/code -n -w"
 export PAGER="/usr/bin/less"
 
 # Configure prompt with git status (https://github.com/olivierverdier/zsh-git-prompt)
-source ~/.zsh/git-prompt/zshrc.sh
+if [ -f ~/.zsh/git-prompt/zshrc.sh ]; then
+  source ~/.zsh/git-prompt/zshrc.sh
+else
+  echo "\033[0;91mWARNING\033[0m: .zsh/gitprompt/zshrc.sh not found; zsh prompt won't work correctly"
+fi
 ZSH_THEME_GIT_PROMPT_NOCACHE=1
 PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %4~/$(git_super_status)%{\e[36m%}%{\e[0;36m%}]%{\e[0m%} '
 
@@ -44,9 +52,11 @@ WORDCHARS='*_-~;!#$%^()[]{}<>'
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Allow Homebrew to authenticate with GitHub, avoiding rate limiting issues [token expires 2022-08-01]
-export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.secret_homebrew_git_access_token`
-if [ "" = "$xHOMEBREW_GITHUB_API_TOKEN" ]; then
-  echo 'WARNING: $HOMEBREW_GITHUB_API_TOKEN is unset'
+if [ -f ~/.secret_homebrew_git_access_token ]; then
+  export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.secret_homebrew_git_access_token`
+fi
+if [ "" = "$HOMEBREW_GITHUB_API_TOKEN" ]; then
+  echo "\033[0;91mWARNING\033[0m: ~/.secret_homebrew_git_access_token not found; couldn't set \$HOMEBREW_GITHUB_API_TOKEN"
 fi
 
 ##################################################

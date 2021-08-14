@@ -6,6 +6,7 @@ function main {
     install zsh ~/.zsh
     install gitconfig ~/.gitconfig
     install gitignore_global ~/.gitignore_global
+    install ideavimrc ~/.ideavimrc
     echo
 }
 

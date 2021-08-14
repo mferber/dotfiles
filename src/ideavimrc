@@ -1,0 +1,18 @@
+""" Plugins
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Other settings
+set showmode
+set incsearch
+set hlsearch
+set highlightedyank
+
+""" Custom mappings
+nmap <leader>qq <Action>(QuickJavaDoc)
+nmap <leader>qd <Action>(QuickImplementations)

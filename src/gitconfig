@@ -3,6 +3,7 @@
 	name = Matthias Ferber
 [core]
 	editor = code -nw
+	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
 [alias]

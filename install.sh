@@ -2,9 +2,10 @@
 
 function main {
     echo "Installing dotfiles..."
+    install zshrc ~/.zshrc
+    install zsh ~/.zsh
     install gitconfig ~/.gitconfig
     install gitignore_global ~/.gitignore_global
-    install zshrc ~/.zshrc
     echo
 }
 

@@ -14,20 +14,19 @@ setopt autocd
 setopt EXTENDED_GLOB
 setopt HIST_IGNORE_ALL_DUPS
 setopt AUTO_NAME_DIRS
+HISTSIZE=200
 
 # Command completion
 source ~/.zsh/npm_autocomplete.sh
 
-#export EDITOR="/usr/bin/emacs"
+# Default editors
 export EDITOR="/Users/matthias/bin/code -n -w"
 export PAGER="/usr/bin/less"
 
-# configure prompt with git status (https://github.com/olivierverdier/zsh-git-prompt)
-source ~/.dotfiles/zsh/git-prompt/zshrc.sh
+# Configure prompt with git status (https://github.com/olivierverdier/zsh-git-prompt)
+source ~/.zsh/git-prompt/zshrc.sh
 ZSH_THEME_GIT_PROMPT_NOCACHE=1
 PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %4~/$(git_super_status)%{\e[36m%}%{\e[0;36m%}]%{\e[0m%} '
-
-HISTSIZE=200
 
 # Make path elements act as word separators as in tcsh
 WORDCHARS='*_-~;!#$%^()[]{}<>'
@@ -46,7 +45,9 @@ WORDCHARS='*_-~;!#$%^()[]{}<>'
 
 # Allow Homebrew to authenticate with GitHub, avoiding rate limiting issues [token expires 2022-08-01]
 export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.secret_homebrew_git_access_token`
-
+if [ "" = "$xHOMEBREW_GITHUB_API_TOKEN" ]; then
+  echo 'WARNING: $HOMEBREW_GITHUB_API_TOKEN is unset'
+fi
 
 ##################################################
 # ALIASES
@@ -109,9 +110,3 @@ curll() {
 macdown() {
     "$(mdfind kMDItemCFBundleIdentifier=com.uranusjr.macdown | head -n1)/Contents/SharedSupport/bin/macdown" $@
 }
-
-##################################################
-# CLIENT-SPECIFIC EXTENSIONS
-##################################################
-
-[ -f ~/.zshenv.clients ] && source ~/.zshenv.clients

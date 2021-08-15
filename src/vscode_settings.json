@@ -1,0 +1,50 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "editor.fontFamily": "Fira Code, SF Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+
+    // Fira Code ligature options (https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets):
+    // ss02 = horizontal bar on less/greater-than-or-equal
+    // ss03 = traditional ampersand
+    // ss04 = lightweight dollar sign
+    // ss06 = apply ligatures to common regexp match operators, positive and negative
+    // zero = dotted zero instead of slashed
+    // onum = old-style numerals
+    "editor.fontLigatures": "'ss02', 'ss03', 'ss04', 'ss07', 'zero', 'onum'",
+
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "files.associations": {
+        "*.log": "log"
+    },
+    "[log]": {
+        "editor.fontFamily": "Iosevka SS05",
+        "editor.fontWeight": "400"
+    },
+    "editor.renderWhitespace": "all",
+    "editor.multiCursorModifier": "alt",
+    "editor.suggestSelection": "first",
+    "window.nativeFullScreen": false,
+    "window.newWindowDimensions": "maximized",
+    "editor.fontWeight": "100",
+    "markdown-preview-enhanced.breakOnSingleNewLine": false,
+    "markdown.preview.fontSize": 16,
+    "markdown.styles": [
+        "styles/Markdown-preview.css"
+    ],
+    "terminal.integrated.fontSize": 14,
+    "vim.camelCaseMotion.enable": true,
+    "vim.cursorStylePerMode.replace": "block-outline",
+    "vim.cursorStylePerMode.visual": "block-outline",
+    "vim.cursorStylePerMode.visualblock": "block-outline",
+    "vim.cursorStylePerMode.visualline": "block-outline",
+    "vim.hlsearch": true,
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "editor.cursorBlinking": "phase",
+}

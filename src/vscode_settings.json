@@ -40,11 +40,5 @@
     "vim.cursorStylePerMode.visualblock": "block-outline",
     "vim.cursorStylePerMode.visualline": "block-outline",
     "vim.hlsearch": true,
-    "vim.statusBarColorControl": true,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#5f00af",
-        "statusBar.noFolderBackground": "#5f00af",
-        "statusBar.debuggingBackground": "#5f00af"
-    },
     "editor.cursorBlinking": "phase",
 }

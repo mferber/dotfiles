@@ -17,3 +17,4 @@ set highlightedyank
 """ Custom mappings
 nmap <leader>qq <Action>(QuickJavaDoc)
 nmap <leader>qd <Action>(QuickImplementations)
+nmap <leader>qf <Action>(Javascript.Linters.EsLint.Fix)

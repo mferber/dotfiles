@@ -41,4 +41,8 @@
     "vim.cursorStylePerMode.visualline": "block-outline",
     "vim.hlsearch": true,
     "editor.cursorBlinking": "phase",
+    "editor.tabSize": 2,
+    "vim.replaceWithRegister": true,
+    "editor.parameterHints.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
 }

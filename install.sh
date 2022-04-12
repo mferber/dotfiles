@@ -21,6 +21,7 @@ function install {
     SYMLINK_TARGET_DISPLAY=$(shorten_path "$SYMLINK_TARGET")
     red="\033[0;91m"
     green="\033[0;92m"
+    cyan="\033[0;36m"
     reset="\033[0m"
 
     if [ -L "$SYMLINK_LOCATION" ]; then
@@ -33,11 +34,22 @@ function install {
     elif [ -e "$SYMLINK_LOCATION" ]; then
         echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} file exists at this location"
     else
-        ln -s "$SYMLINK_TARGET" "$SYMLINK_LOCATION"
-        if [ "$?" = "0" ]; then
-            echo -e "${green}✓ $SYMLINK_LOCATION_DISPLAY:${reset} installed symlink => $SYMLINK_TARGET_DISPLAY"
-        else
-            echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} could not create symlink at $SYMLINK_LOCATION_DISPLAY"
+        SYMLINK_DIR=`dirname "$SYMLINK_LOCATION"`
+        if [ ! -d "$SYMLINK_DIR" ]; then
+            mkdir -p "${SYMLINK_DIR}"
+            if [ $? -ne 0 ]; then
+                echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} parent directory ${SYMLINK_DIR} does not exist and could not be created"
+            else
+                echo -e "${cyan}✓ $SYMLINK_DIR:${reset} created directory"
+            fi
+        fi
+        if [ -d "$SYMLINK_DIR" ]; then
+            ln -s "$SYMLINK_TARGET" "$SYMLINK_LOCATION"
+            if [ "$?" = "0" ]; then
+                echo -e "${green}✓ $SYMLINK_LOCATION_DISPLAY:${reset} installed symlink => $SYMLINK_TARGET_DISPLAY"
+            else
+                echo -e "${red}𐄂 $SYMLINK_LOCATION_DISPLAY:${reset} could not create symlink at $SYMLINK_LOCATION_DISPLAY"
+            fi
         fi
     fi
 }

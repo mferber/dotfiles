@@ -9,6 +9,7 @@ function main {
     install vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
     install ideavimrc ~/.ideavimrc
     install vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc
+    install httpie_config.json ~/.config/httpie/config.json
     echo
 }
 

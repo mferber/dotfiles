@@ -1,5 +1,5 @@
 body {
-  font-family: Iowan Old Style, Avenir Next, Bell MT, Helvetica, arial, sans-serif;
+  font-family: SF Pro Text, Proxima Nova, Avenir Next, Helvetica, arial, sans-serif;  /* Iowan Old Style */
   font-size: 16px;
   line-height: 1.6;
   padding-top: 10px;
@@ -27,17 +27,18 @@ a.anchor {
   bottom: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Avenir Next;
+  font-family: SF Pro Display, Avenir Next;
+  font-weight: normal;
   line-height: 110%;
   margin: 1.5em 0 0.5em 0;
-  font-weight: bold;
+  padding: 0 0 0.25em 0;
   -webkit-font-smoothing: antialiased;
   cursor: text;
   position: relative;
 }
 
-h1, h2, h3 {
-    padding: 0 0 0.25em 0;
+h1, h2, h3, h4 {
+  font-weight: bold;
 }
 
 h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
@@ -45,25 +46,25 @@ h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:h
   text-decoration: none; }
 
 h1 tt, h1 code {
-  font-size: 85%; }
+  font-size: inherit; }
 
 h2 tt, h2 code {
-  font-size: 85%; }
+  font-size: inherit; }
 
 h3 tt, h3 code {
-  font-size: 85%; }
+  font-size: inherit; }
 
 h4 tt, h4 code {
-  font-size: 85%; }
+  font-size: inherit; }
 
 h5 tt, h5 code {
-  font-size: 85%; }
+  font-size: inherit; }
 
 h6 tt, h6 code {
-  font-size: 85%; }
+  font-size: inherit; }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   border-bottom: 1px solid #333333;
   color: black; }
 
@@ -77,22 +78,22 @@ h1.doctitle {
 }
 
 h2 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   border-bottom: 1px solid #ddd;
   color: black;
 }
 
 h3 {
-  font-size: 1.1em;
-  padding-top: 0.5em;
-}
+  font-size: 1.2em;
+  padding-top: 0.5em; }
 
 h4 {
-  font-size: 1.0em;
+  font-size: 1.1em;
   font-style: italic; }
 
 h5 {
-  font-size: 1.0em; }
+  font-size: 1.0em;
+  font-style: italic; }
 
 h6 {
   color: #777777;
@@ -266,12 +267,26 @@ span.float-right {
     margin: 13px auto 0;
     text-align: right; }
 
-code, tt {
-  font-family: /*SF Mono,*/ Fira Code, Fantasque Sans Mono, Menlo, Inconsolata, Courier, sans-serif;
-  font-size: 85%;
+code, tt {  /* Code blocks and inline code */
+  font-family: "SF Mono", "TheSansMono Office", "Fantasque Sans Mono", Menlo, Inconsolata, Courier, sans-serif;
+  font-size: 90%;
+  background-color: #eee;
   margin: 0 0px;
-  padding: 0 0px;
-  white-space: nowrap; }
+  padding: 0.05em 0.3em;
+  white-space: nowrap;
+  border-radius: 3px; }
+
+pre code { /* Code blocks only */
+  margin: 0;
+  padding: 0;
+  border: 0; 
+  white-space: pre; }
+
+pre {  /* surrounds code blocks */
+  padding: 0.25em 0.5em;
+  background-color: #eee;
+  border: 0.5px solid #ddd;
+  border-radius: 0px; }
 
 .highlight pre {
   background-color: #f8f8f8;
@@ -283,21 +298,19 @@ code, tt {
   border-radius: 3px; }
 
 pre {
-  background-color: #f8f8f8;
-  border: 1px solid #cccccc;
-  line-height: 1.0;
+  /*background-color: #f8f8f8;*/
+  /*border: 1px solid #cccccc;*/
+  /*font-size: 14px;*/
+  /*line-height: 17px;*/
   overflow: auto;
-  padding: 6px 10px; }
-
-pre code, pre tt {
-  white-space: pre;
-  font-size: 90%; }
+  /*padding: 6px 10px;*/
+  /*border-radius: 3px;*/ }
 
 sup {
     font-size: 0.83em;
     vertical-align: super;
-    line-height: 0; }
-
+    line-height: 0;
+}
 * {
   -webkit-print-color-adjust: exact;
 }

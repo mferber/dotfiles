@@ -8,6 +8,7 @@ function main {
     install gitignore_global ~/.gitignore_global
     install vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
     install ideavimrc ~/.ideavimrc
+    install nvUltra_Matthias-custom.css ~/Library/'Group Containers'/group.com.multimarkdown/Library/'Application Support'/'MultiMarkdown Software'/CSS/Matthias-custom.css
     install vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc
     install httpie_config.json ~/.config/httpie/config.json
     echo

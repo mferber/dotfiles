@@ -45,6 +45,5 @@
     "vim.replaceWithRegister": true,
     "editor.parameterHints.enabled": false,
     "workbench.tree.indent": 20,
-    "workbench.colorTheme": "Night Lion theme",
     "editor.acceptSuggestionOnEnter": "off",
 }

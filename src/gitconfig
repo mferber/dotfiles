@@ -2,7 +2,7 @@
 	email = matthias@cantinaconsulting.com
 	name = Matthias Ferber
 [core]
-	editor = code -nw
+	editor = codium -nw
 	excludesfile = ~/.gitignore_global
 [push]
 	default = simple

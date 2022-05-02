@@ -7,6 +7,7 @@ function main {
     install gitconfig ~/.gitconfig
     install gitignore_global ~/.gitignore_global
     install vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
+    install vscode_settings.json ~/Library/'Application Support'/VSCodium/User/settings.json
     install ideavimrc ~/.ideavimrc
     install 'nvUltra_Matthias Customized.css' ~/'Library/Group Containers/group.com.multimarkdown/Library/Application Support/MultiMarkdown Software/CSS/Matthias Customized.css'
     install vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc

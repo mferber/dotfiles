@@ -4,6 +4,7 @@ function main {
     echo "Installing dotfiles..."
     install zshrc ~/.zshrc
     install zsh ~/.zsh
+    install karabiner/karabiner.json ~/.config/karabiner/karabiner.json
     install gitconfig ~/.gitconfig
     install gitignore_global ~/.gitignore_global
     install vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json

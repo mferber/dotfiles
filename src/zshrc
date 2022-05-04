@@ -39,6 +39,9 @@ PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %4~/$(git_super_status)%
 # Make path elements act as word separators as in tcsh
 WORDCHARS='*_-~;!#$%^()[]{}<>'
 
+# Directory containing config.json for xh utility
+export XH_CONFIG_DIR="$HOME/.dotfiles/xh/config.json"
+
 # ssh-agent
 # eval "$(ssh-agent -s)"
 # ssh-add -K ~/.ssh/...
@@ -48,8 +51,8 @@ WORDCHARS='*_-~;!#$%^()[]{}<>'
 # TOOL INITIALIZATION
 ##################################################
 
-# Enable autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# Enable zoxide (enhanced cd with memory)
+[ -x /usr/local/bin/zoxide ] && eval "$(/usr/local/bin/zoxide init zsh)"
 
 # Allow Homebrew to authenticate with GitHub, avoiding rate limiting issues [token expires 2022-08-01]
 if [ -f ~/.secret_homebrew_git_access_token ]; then
@@ -66,8 +69,9 @@ fi
 # Simple command shortcuts
 alias grep=egrep
 alias ll='ls -lF'
+alias exl='exa -lF --grep'
 alias md='macdown'
-alias vs='code'
+alias code='codium'
 alias t='tail -50'
 alias tt='tail -150'
 alias ttt='tail -500'
@@ -82,19 +86,6 @@ alias d2='pushd +2'
 alias d3='pushd +3'
 alias d4='pushd +4'
 alias d5='pushd +5'
-
-# Get the path to the frontmost Finder window, if applicable
-alias fd='osascript -e '\''
-  tell application "Finder"
-    set loc to target of front window
-    if class of loc is folder then
-      POSIX path of (loc as alias)
-    else
-      "."
-    end if
-  end tell'\'''
-alias gofd='cd `fd`'
-
 
 ##################################################
 # FUNCTIONS

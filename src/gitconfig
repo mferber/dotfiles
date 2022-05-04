@@ -4,6 +4,7 @@
 [core]
 	editor = codium -nw
 	excludesfile = ~/.gitignore_global
+	pager = delta
 [push]
 	default = simple
 [alias]
@@ -88,19 +89,14 @@
 	ui = true
 [color "branch"]
 	upstream = yellow
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
+[interactive]
+  diffFilter = delta --color-only
 [merge]
-	tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[mergetool]
-	prompt = false
+	conflictstyle = diff3
 [diff]
-	tool = Kaleidoscope
+	colorMoved = default
+[delta]
+	navigate = true  # use n and N to move between diff sections 
 [credential]
 	helper = osxkeychain
 [filter "media"]

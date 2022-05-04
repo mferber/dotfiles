@@ -12,7 +12,7 @@ function main {
     install ideavimrc ~/.ideavimrc
     # install 'nvUltra_Matthias Customized.css' ~/'Library/Group Containers/group.com.multimarkdown/Library/Application Support/MultiMarkdown Software/CSS/Matthias Customized.css'
     install vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc
-    install httpie_config.json ~/.config/httpie/config.json
+    # Note: xh/config.json is accessed by setting $XH_CONFIG_DIR and does not need to be linked
     echo
 }
 

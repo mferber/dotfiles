@@ -102,11 +102,6 @@ d() {
     if [[ $dir_index != "" ]]; then eval "pushd +$dir_index > /dev/null"; fi
 }
 
-# curl -> less
-curll() {
-    curl $@ | $PAGER
-}
-
 # launch MacDown (supports creating file)
 macdown() {
     "$(mdfind kMDItemCFBundleIdentifier=com.uranusjr.macdown | head -n1)/Contents/SharedSupport/bin/macdown" $@

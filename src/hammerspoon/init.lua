@@ -1,2 +1,2 @@
 zoomMuteMonitor = hs.loadSpoon('ZoomMuteMonitor')
---zoomMuteMonitor:start()
+zoomMuteMonitor:start()

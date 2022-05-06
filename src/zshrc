@@ -40,7 +40,7 @@ PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %4~/$(git_super_status)%
 WORDCHARS='*_-~;!#$%^()[]{}<>'
 
 # Directory containing config.json for xh utility
-export XH_CONFIG_DIR="$HOME/.dotfiles/xh/config.json"
+export XH_CONFIG_DIR="$HOME/.dotfiles/xh"
 
 # ssh-agent
 # eval "$(ssh-agent -s)"

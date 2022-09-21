@@ -1,7 +1,7 @@
 {
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "editor.fontFamily": "Fira Code, SF Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "SF Mono, Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
 
     // Fira Code ligature options (https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets):
@@ -12,8 +12,6 @@
     // zero = dotted zero instead of slashed
     // onum = old-style numerals
     "editor.fontLigatures": "'ss02', 'ss03', 'ss04', 'ss07', 'zero', 'onum'",
-
-    "editor.minimap.enabled": false,
     "workbench.startupEditor": "none",
     "files.associations": {
         "*.log": "log"
@@ -46,4 +44,24 @@
     "editor.parameterHints.enabled": false,
     "workbench.tree.indent": 20,
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.autoClosingBrackets": "never",
+    "vim.showMarksInGutter": true,
+
+    "todo-tree.highlights.defaultHighlight": {
+        "foreground": "#000",
+        "background": "#ff0",
+        "fontWeight": "bold",
+        "borderRadius": "2px",
+        "gutterIcon": true,
+        "iconColour": "#ff0",
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "background": "#0f0",
+            "iconColour": "#8f0"
+        }
+    },
+    "todo-tree.tree.tooltipFormat": "${tag} ${afterOrBefore}",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.currentLine.pullRequests.enabled": false
 }

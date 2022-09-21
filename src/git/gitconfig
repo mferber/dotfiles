@@ -1,6 +1,6 @@
 [user]
-	email = matthias.ferber@gmail.com
-	name = Matthias Ferber
+	email = matthias.ferber@toasttab.com
+	name = matthiasferber-toast
 [core]
 	editor = codium -nw
 	excludesfile = ~/.gitignore_global

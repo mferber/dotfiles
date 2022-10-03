@@ -107,3 +107,40 @@ d() {
 macdown() {
     "$(mdfind kMDItemCFBundleIdentifier=com.uranusjr.macdown | head -n1)/Contents/SharedSupport/bin/macdown" $@
 }
+
+#
+# GitHub helpers
+#
+
+# get name of current repo
+function cur_repo {
+  git remote -v | grep 'fetch)$'| sed -E 's/(^.*:)|((\.git)?[[:space:]]\([^[:space:]]+\)$)//g'
+}
+
+# open GitHub to the current repo
+function gh {
+  GH_REPO=$(cur_repo)
+  if [[ -n $GH_REPO ]]; then
+    open "https://github.com/$GH_REPO"
+  else
+    echo "You're not currently in a repo\n"
+  fi
+  unset GH_REPO
+}
+
+# open GitHub to the current repo and branch
+function ghb {
+  GH_REPO=$(cur_repo)
+  if [[ -n $GH_REPO ]]; then
+    GH_BRANCH=$(git branch --show-current)
+    if [[ -n $GH_BRANCH ]]; then
+      open "https://github.com/$GH_REPO/tree/$GH_BRANCH"
+    else
+      echo "You're not currently on a named branch\n"
+    fi
+  else
+    echo "You're not currently in a repo\n"
+  fi
+  unset GH_REPO
+  unset GH_BRANCH
+}

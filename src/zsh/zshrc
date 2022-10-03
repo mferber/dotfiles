@@ -163,3 +163,14 @@ function ghb {
   unset GH_REPO
   unset GH_BRANCH
 }
+
+##################################################
+# TOAST STANDARD SETUP
+##################################################
+
+source /Users/matthias/.dotfiles/bashrc
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Created by `pipx` on 2022-09-21 19:47:14
+export PATH="$PATH:/Users/matthias/.local/bin"

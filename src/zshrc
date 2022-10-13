@@ -42,6 +42,11 @@ WORDCHARS='*_-~;!#$%^()[]{}<>'
 # Directory containing config.json for xh utility
 export XH_CONFIG_DIR="./other_configs/xh"
 
+# Enable zoxide `z` command
+if whence zoxide > /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
 # ssh-agent
 # eval "$(ssh-agent -s)"
 # ssh-add -K ~/.ssh/...

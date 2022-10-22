@@ -64,7 +64,7 @@ if [ -f ~/.secret_homebrew_git_access_token ]; then
   export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.secret_homebrew_git_access_token`
 fi
 if [ "" = "$HOMEBREW_GITHUB_API_TOKEN" ]; then
-  echo "\033[0;91mWARNING\033[0m: ~/.secret_homebrew_git_access_token not found; couldn't set \$HOMEBREW_GITHUB_API_TOKEN"
+  echo "\033[0;91mWARNING\033[0m: ~/.secret_homebrew_git_access_token not found; couldn't set \$HOMEBREW_GITHUB_API_TOKEN to avoid rate-limiting problems with GitHub"
 fi
 
 ##################################################

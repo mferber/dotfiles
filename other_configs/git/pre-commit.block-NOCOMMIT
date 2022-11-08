@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Blocks commits containing lines matching the $FORBIDDEN regex
+#
+# Install in <repo>/.git/hooks/pre-commit
+#
+
+FORBIDDEN='NOCOMMIT|DONOTCOMMIT'
+
+# colored output for interactive shells only
+if [ ! -t 1 ]; then
+	OPT_NOCOLOR="--no-color"
+fi
+
+matchingFiles=$(git diff --cached --name-only | xargs git --no-pager grep --cached -E -i $FORBIDDEN | tr '\n' ' ')
+
+if [ "x${matchingFiles}x" != "xx" ]
+then		
+	tput bel
+	echo
+	echo "*** COMMIT REJECTED! ***"
+	echo "Found commit blocker flags in cached files. Please remove them before committing."
+	echo
+	#echo "Flag regexp: /$FORBIDDEN/"
+	#echo
+	echo "Matches:"
+	git diff --cached --name-only | xargs git --no-pager grep --cached -E -i $OPT_NOCOLOR -H -n $FORBIDDEN
+	echo
+	exit 1
+fi

@@ -168,6 +168,8 @@ function ghb {
 # TOAST CUSTOMIZATIONS
 ##################################################
 
+export PATH="/usr/local/mysql/bin:$PATH"
+
 # choose a repo and go there
 alias g='cd ~/toast/git-repos/`ls ~/toast/git-repos | fzf`'
 

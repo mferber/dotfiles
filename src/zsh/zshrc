@@ -181,6 +181,9 @@ alias ga="gr ec-api"
 
 alias gw=./gradlew
 alias pb=pizzabox
+function pbr {
+  pb db refresh -d toast -c "$1"
+}
 
 # get name of current repo
 function cur_repo {

@@ -227,3 +227,4 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Created by `pipx` on 2022-09-21 19:47:14
 export PATH="$PATH:/Users/matthias/.local/bin"
+export DOCKER_HOST=unix:///Users/matthias/.colima/default/docker.sock

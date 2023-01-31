@@ -177,7 +177,6 @@ alias g='cd ~/toast/git-repos/`ls ~/toast/git-repos | fzf`'
 function gr {
   cd ~/toast/git-repos/$1
 }
-alias ga="gr ec-api"
 
 alias gw=./gradlew
 alias pb=pizzabox

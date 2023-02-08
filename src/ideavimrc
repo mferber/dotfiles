@@ -4,6 +4,7 @@ set multiple-cursors
 set commentary
 set argtextobj
 set ReplaceWithRegister
+set textobj-entire
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"

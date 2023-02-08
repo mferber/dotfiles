@@ -181,7 +181,12 @@ function gr {
 alias gw=./gradlew
 alias pb=pizzabox
 function pbr {
-  pb db refresh -d toast -c "$1"
+  if [ $# -lt 2 ]; then
+    echo "Usage: pbr <database> <customer-code>"
+    echo
+    return
+  fi
+  pb db refresh -d "$1" -c "$2"
 }
 
 # get name of current repo

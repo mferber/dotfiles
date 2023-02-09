@@ -188,6 +188,7 @@ function pbr {
   fi
   pb db refresh -d "$1" -c "$2"
 }
+alias pbdb='./gradlew -p db update'
 
 # get name of current repo
 function cur_repo {

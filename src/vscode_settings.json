@@ -63,5 +63,8 @@
     },
     "todo-tree.tree.tooltipFormat": "${tag} ${afterOrBefore}",
     "gitlens.currentLine.enabled": false,
-    "gitlens.currentLine.pullRequests.enabled": false
+    "gitlens.currentLine.pullRequests.enabled": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.macOptionIsMeta": true
 }

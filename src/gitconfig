@@ -90,13 +90,22 @@
 [color "branch"]
 	upstream = yellow
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = delta --color-only --line-numbers
 [merge]
 	conflictstyle = diff3
 [diff]
 	colorMoved = default
 [delta]
 	navigate = true  # use n and N to move between diff sections 
+	file-style = yellow bold
+	file-decoration-style = yellow ol ul
+	hunk-label = ➤
+	hunk-header-style = syntax italic
+	hunk-header-file-style = white
+	hunk-header-decoration-style = box
+	line-numbers = true
+	line-numbers-left-style = gray
+	line-numbers-right-style = gray
 [credential]
 	helper = osxkeychain
 [filter "media"]

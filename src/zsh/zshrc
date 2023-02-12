@@ -31,7 +31,7 @@ echo "\033[0;91mWARNING\033[0m: .zsh/npm_autocomplete.sh not found; npm autocomp
 fi
 
 # Default editors
-export EDITOR="/Users/matthias/bin/code -n -w"
+export EDITOR="/opt/homebrew/bin/codium -n -w"
 export PAGER="/usr/bin/less"
 
 # Configure prompt with git status (https://github.com/olivierverdier/zsh-git-prompt)

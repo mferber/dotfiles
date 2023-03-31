@@ -16,6 +16,9 @@ set hlsearch
 set highlightedyank
 
 """ Custom mappings
+nnoremap <C-A-o> O<Esc>   " insert blank line above cursor, stay in normal mode
+
+""" Custom mappings for JetBrains IDEs
 nmap <leader>qq <Action>(QuickJavaDoc)
 nmap <leader>qd <Action>(QuickImplementations)
 nmap <leader>qf <Action>(Javascript.Linters.EsLint.Fix)

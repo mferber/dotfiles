@@ -41,7 +41,7 @@ else
 echo "\033[0;91mWARNING\033[0m: .zsh/gitprompt/zshrc.sh not found; zsh prompt won't work correctly"
 fi
 ZSH_THEME_GIT_PROMPT_NOCACHE=1
-PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %4~/$(git_super_status)%{\e[36m%}%{\e[0;36m%}]%{\e[0m%} '
+PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %0~/$(git_super_status)%{\e[36m%}%{\e[0;36m%}]%{\e[0m%} '
 
 # Make path elements act as word separators as in tcsh
 WORDCHARS='*_-~;!#$%^()[]{}<>'

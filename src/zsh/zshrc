@@ -189,6 +189,7 @@ function pbr {
   pb db refresh -d "$1" -c "$2"
 }
 alias pbdb='./gradlew -p db update'
+alias tff=toast-feature-flags
 
 # get name of current repo
 function cur_repo {

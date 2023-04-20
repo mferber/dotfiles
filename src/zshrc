@@ -2,6 +2,8 @@
 # KEY ENVIRONMENT AND SHELL VARIABLES
 ##################################################
 
+export MAF_CONFIG_BASE_DIR=$(readlink -f $(dirname $(readlink -f $0))/..)
+
 # Add version managers to PATH. Make sure these are the last PATH variable changes.
 export PATH="$HOME/bin:$HOME/.rvm/bin:$PATH"
 

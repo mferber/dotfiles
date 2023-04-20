@@ -50,6 +50,11 @@ fi
 # eval "$(ssh-agent -s)"
 # ssh-add -K ~/.ssh/...
 
+# xh uses the Application Support directory for configs and session storage on
+# Mac by Rust default; this is the nicer one used by Linux. Also, xh won't
+# currently expand `~' so we do it ourselves
+export XH_CONFIG_DIR=$(readlink -f ~)/.config/xh
+
 
 ##################################################
 # TOOL INITIALIZATION

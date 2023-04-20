@@ -1,6 +1,7 @@
 {
   "default_options": [
     "--pretty=all",
-    "--style=fruity"
+    "--style=fruity",
+    "--session=main"
   ]
 }

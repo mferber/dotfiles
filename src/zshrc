@@ -41,9 +41,6 @@ PROMPT=$'%{\e[36m%}[%{\e[1;3m%}%!%{\e[0;36m%} %D{%I:%M} %4~/$(git_super_status)%
 # Make path elements act as word separators as in tcsh
 WORDCHARS='*_-~;!#$%^()[]{}<>'
 
-# Directory containing config.json for xh utility
-export XH_CONFIG_DIR="./other_configs/xh"
-
 # Enable zoxide `z` command
 if whence zoxide > /dev/null; then
   eval "$(zoxide init zsh)"

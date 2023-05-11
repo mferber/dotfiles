@@ -27,6 +27,8 @@
 	prune = fetch --prune
 	pst = pull --rebase --autostash
 	ff = merge --ff-only
+	cp = cherry-pick
+	cpt = cherry-pick -n  # "cherry-pick temporary"
 	sl = stash list
 	sa = "!f() { git stash apply \"stash@{$1}\"; }; f"
 	ss = stash save

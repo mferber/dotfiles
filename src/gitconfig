@@ -47,7 +47,7 @@
 	recent = "!f() { git branch -a --sort -committerdate --color -vv| head ${1+-$1}; }; f "
 
 	# which branch am I on?
-	wb = rev-parse --abbrev-ref HEAD
+	wb = branch --show-current
 
 	# push new branch to origin for the first time
 	pushb = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
@@ -76,6 +76,9 @@
 
 	# create a temporary backup branch before starting a rebase, timestamped
 	tagrebase = "!f() { BRANCHNAME=backup-before-rebase/`git rev-parse --abbrev-ref HEAD`-`date +'%G-%m-%d_%H-%M-%S'`; git branch $BRANCHNAME; echo "Created branch $BRANCHNAME"; }; f"
+
+	# archive a local branch by adding an "archive/" prefix, replacing the "maf/" prefix if it was there
+	archiveb = "!f() { r=$(git branch --show-current | sed -Ee 's/^(maf\\/)?/archive\\//');	read -p 'Rename branch to \"'$r'\"? [y/n] ' -n 1 -r choice; echo ''; if [[ "$choice" == "y" ]]; then git branch -m "$r"; echo "Renamed."; fi; }; f"
 
 	# amend the last commit, updating the author date
 	amendd = !git commit --amend --date="$(date +%s)"

@@ -1,4 +1,5 @@
 """ Plugins
+
 set surround
 set multiple-cursors
 set commentary
@@ -7,18 +8,23 @@ set ReplaceWithRegister
 set textobj-entire
 
 """ Plugin settings -------------------------
+
 let g:argtextobj_pairs="[:],(:),<:>"
 
 """ Other settings
+
 set showmode
 set incsearch
 set hlsearch
 set highlightedyank
 
 """ Custom mappings
-nnoremap <C-A-o> O<Esc>   " insert blank line above cursor, stay in normal mode
+
+" insert blank line below cursor, stay in normal mode
+nnoremap <C-A-o> :set paste<CR>mso<Esc>`s:set nopaste<CR>
 
 """ Custom mappings for JetBrains IDEs
+
 nmap <leader>qq <Action>(QuickJavaDoc)
 nmap <leader>qd <Action>(QuickImplementations)
 nmap <leader>qf <Action>(Javascript.Linters.EsLint.Fix)

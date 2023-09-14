@@ -1,5 +1,6 @@
 """ Plugins
 
+set sneak
 set surround
 set multiple-cursors
 set commentary
@@ -19,6 +20,9 @@ set hlsearch
 set highlightedyank
 
 """ Custom mappings
+
+" alternative esc remap experiment
+inoremap jk <Esc>
 
 " insert blank line below cursor, stay in normal mode
 nnoremap <C-A-o> :set paste<CR>mso<Esc>`s:set nopaste<CR>

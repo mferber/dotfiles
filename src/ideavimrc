@@ -24,8 +24,14 @@ set highlightedyank
 " alternative esc remap experiment
 inoremap jk <Esc>
 
-" insert blank line below cursor, stay in normal mode
-nnoremap <C-A-o> :set paste<CR>mso<Esc>`s:set nopaste<CR>
+" shift current line down, stay on new empty line; stay in original mode
+nnoremap <C-S-o> O<Esc>0D
+inoremap <C-S-o> <Esc>O<Esc>0C|  " 0C clears line since nopaste option not supported
+
+" insert blank line below current line, stay at orig position; stay in original mode
+" (clobbers reg o)
+nnoremap <C-A-o> moo<Esc>`o
+inoremap <C-A-o> <Esc>lmoo<Esc>`oi|   " l compensates for cursor left shift on exiting insert mode
 
 """ Custom mappings for JetBrains IDEs
 

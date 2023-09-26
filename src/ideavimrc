@@ -24,6 +24,9 @@ set highlightedyank
 " alternative esc remap experiment
 inoremap jk <Esc>
 
+" insert space after current cursor position
+inoremap <leader><leader> <Space><C-o>h
+
 " shift current line down, stay on new empty line; stay in original mode
 nnoremap <C-S-o> O<Esc>0D
 inoremap <C-S-o> <Esc>O<Esc>0C|  " 0C clears line since nopaste option not supported

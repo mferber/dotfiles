@@ -171,7 +171,13 @@ function ghb {
 export PATH="/usr/local/mysql/bin:$PATH"
 
 # choose a repo and go there
-alias g='cd ~/toast/git-repos/`ls ~/toast/git-repos | fzf`'
+function g {
+  REPO=`ls ~/toast/git-repos | fzf`
+  if [ "$REPO" != "" ]; then
+    cd ~/toast/git-repos/$REPO
+  fi
+  unset REPO
+}
 
 # go to specific repo
 function gr {

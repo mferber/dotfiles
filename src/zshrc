@@ -115,6 +115,11 @@ d() {
     if [[ $dir_index != "" ]]; then eval "pushd +$dir_index > /dev/null"; fi
 }
 
+# ripgrep with pager (less)
+rgl() {
+  rg --pretty --color=always $1 | less -R
+}
+
 # launch MacDown (supports creating file)
 macdown() {
     "$(mdfind kMDItemCFBundleIdentifier=com.uranusjr.macdown | head -n1)/Contents/SharedSupport/bin/macdown" $@

@@ -53,6 +53,9 @@
 	# find the main branch for this repo
 	main = "!git for-each-ref --format='%(refname:short)' --sort='-committerdate' 'refs/heads/main' 'refs/heads/develop' 'refs/heads/master' | head -1 | awk '{print $1}'"
 
+	# switch to the main branch
+	sm = "!git switch `git main`"
+
 	# push new branch to origin for the first time
 	pushb = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 

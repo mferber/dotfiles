@@ -16,6 +16,7 @@
 	# basic shorthand commands
 	stat = status
 	st = status -s
+	s = switch
 	co = checkout
 	ci = commit
 	b = branch

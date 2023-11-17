@@ -8,7 +8,7 @@ set argtextobj
 set ReplaceWithRegister
 set textobj-entire
 
-""" Plugin settings -------------------------
+""" Plugin settings
 
 let g:argtextobj_pairs="[:],(:),<:>"
 
@@ -31,10 +31,14 @@ inoremap <leader><leader> <Space><C-o>h
 nnoremap <C-S-o> O<Esc>0D
 inoremap <C-S-o> <Esc>O<Esc>0C|  " 0C clears line since nopaste option not supported
 
-" insert blank line below current line, stay at orig position; stay in original mode
+" insert blank line below current line, stay at orig position; stay in original mode;
 " (clobbers reg o)
 nnoremap <C-A-o> moo<Esc>`o
 inoremap <C-A-o> <Esc>lmoo<Esc>`oi|   " l compensates for cursor left shift on exiting insert mode
+
+" append ; at end of line; in insert mode, add newline;
+nnoremap <C-;> A;<Esc>
+inoremap <C-;> <Esc>A;<CR>
 
 """ Custom mappings for JetBrains IDEs
 

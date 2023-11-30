@@ -179,6 +179,15 @@ function g {
   unset REPO
 }
 
+# choose a repo and push it onto the directory stack
+function p {
+  REPO=`ls ~/toast/git-repos | fzf`
+  if [ "$REPO" != "" ]; then
+    pushd ~/toast/git-repos/$REPO
+  fi
+  unset REPO
+}
+
 # go to specific repo
 function gr {
   cd ~/toast/git-repos/$1

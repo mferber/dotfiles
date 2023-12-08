@@ -172,7 +172,7 @@ export PATH="/usr/local/mysql/bin:$PATH"
 
 # choose a repo and go there
 function g {
-  REPO=`ls ~/toast/git-repos | fzf`
+  REPO=`ls ~/toast/git-repos | fzf -q "$1"`
   if [ "$REPO" != "" ]; then
     cd ~/toast/git-repos/$REPO
   fi
@@ -181,16 +181,20 @@ function g {
 
 # choose a repo and push it onto the directory stack
 function p {
-  REPO=`ls ~/toast/git-repos | fzf`
+  REPO=`ls ~/toast/git-repos | fzf -q "$1"`
   if [ "$REPO" != "" ]; then
     pushd ~/toast/git-repos/$REPO
   fi
   unset REPO
 }
 
-# go to specific repo
-function gr {
-  cd ~/toast/git-repos/$1
+# choose a repo and go to it on GitHub
+function gg {
+  REPO=`ls ~/toast/git-repos | fzf -q "$1"`
+  if [ "$REPO" != "" ]; then
+    open "https://github.com/toasttab/$REPO"
+  fi
+  unset REPO
 }
 
 alias gw=./gradlew

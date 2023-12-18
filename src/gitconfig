@@ -17,6 +17,7 @@
 	stat = status
 	st = status -s
 	s = switch
+	sw = switch  # sometimes my fingers prefer typing two chars, like git co
 	co = checkout
 	ci = commit
 	b = branch

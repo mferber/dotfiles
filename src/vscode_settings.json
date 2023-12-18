@@ -66,5 +66,7 @@
     "gitlens.currentLine.pullRequests.enabled": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.macOptionIsMeta": true
+    "terminal.integrated.macOptionIsMeta": true,
+    "workbench.colorTheme": "Default Dark+ Experimental",
+    "editor.minimap.enabled": false
 }

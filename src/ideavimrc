@@ -1,3 +1,6 @@
+set ideajoin
+set idearefactormode=keep
+
 """ Plugins
 
 set sneak

@@ -2,17 +2,17 @@
 
 function main {
     echo "Installing dotfiles..."
-    install zshrc ~/.zshrc
-    install zsh ~/.zsh
+    install zsh/zshrc ~/.zshrc
+    install zsh/dot_zsh ~/.zsh
     install karabiner/karabiner.json ~/.config/karabiner/karabiner.json
-    install gitconfig ~/.gitconfig
-    install gitignore_global ~/.gitignore_global
-    install vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
-    install vscode_settings.json ~/Library/'Application Support'/VSCodium/User/settings.json
-    install ideavimrc ~/.ideavimrc
+    install git/gitconfig ~/.gitconfig
+    install git/gitignore_global ~/.gitignore_global
+    install vscode/vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
+    install vscode/vscode_settings.json ~/Library/'Application Support'/VSCodium/User/settings.json
+    install vim/ideavimrc ~/.ideavimrc
     # install 'nvUltra_Matthias Customized.css' ~/'Library/Group Containers/group.com.multimarkdown/Library/Application Support/MultiMarkdown Software/CSS/Matthias Customized.css'
-    install vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc
-    install hammerspoon ~/.hammerspoon
+    install vlc/vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc
+    install hammerspoon/dot_hammerspoon ~/.hammerspoon
     install xh/config.json ~/.config/xh/config.json
     echo
 }

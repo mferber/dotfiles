@@ -7,7 +7,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
@@ -20,7 +22,6 @@ let g:argtextobj_pairs="[:],(:),<:>"
 set showmode
 set incsearch
 set hlsearch
-set highlightedyank
 
 """ Custom mappings
 

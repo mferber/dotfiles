@@ -11,6 +11,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 

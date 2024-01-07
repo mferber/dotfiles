@@ -7,6 +7,7 @@ function main {
     install karabiner/karabiner.json ~/.config/karabiner/karabiner.json
     install git/gitconfig ~/.gitconfig
     install git/gitignore_global ~/.gitignore_global
+    install vim/vimrc ~/.vimrc
     install vscode/vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
     install vscode/vscode_settings.json ~/Library/'Application Support'/VSCodium/User/settings.json
     install vim/ideavimrc ~/.ideavimrc

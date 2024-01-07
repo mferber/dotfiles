@@ -1,0 +1,44 @@
+""" Plugins
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'kana/vim-textobj-entire'
+
+call plug#end()
+
+""" Plugin settings
+
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Other settings
+
+set showmode
+set incsearch
+set hlsearch
+set highlightedyank
+
+""" Custom mappings
+
+" alternative esc remap experiment
+inoremap jk <Esc>
+
+" in insert mode, insert space after current cursor position without moving
+inoremap <leader><leader> <Space><C-o>h
+
+" shift current line down, stay on new empty line; stay in original mode
+nnoremap <C-S-o> O<Esc>0D
+inoremap <C-S-o> <Esc>O<Esc>0C|  " 0C clears line since nopaste option not supported
+
+" insert blank line below current line, stay at orig position; stay in original mode;
+" (clobbers reg o)
+nnoremap <C-A-o> moo<Esc>`o
+inoremap <C-A-o> <Esc>lmoo<Esc>`oi|   " l compensates for cursor left shift on exiting insert mode
+
+" append semicolon at end of line; in insert mode, also append newline
+nnoremap <C-;> A;<Esc>
+inoremap <C-;> <Esc>A;<CR>

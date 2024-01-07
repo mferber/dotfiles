@@ -54,6 +54,6 @@ nnoremap <C-j> O<Esc>0D
 " -- on next line, 0C clears line since nopaste option not supported
 inoremap <C-j> <Esc>O<Esc>0C
 
-" append semicolon at end of line; in insert mode, also append newline
+" append semicolor at end of line; in insert mode, also append newline
 nnoremap <C-;> A;<Esc>
 inoremap <C-;> <Esc>A;<CR>

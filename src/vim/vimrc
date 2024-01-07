@@ -1,7 +1,8 @@
 """ Plugins
 
 call plug#begin('~/.vim/plugged')
-
+    
+Plug 'dbakker/vim-paragraph-motion'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'

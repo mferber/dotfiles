@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dbakker/vim-paragraph-motion'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/ReplaceWithRegister'

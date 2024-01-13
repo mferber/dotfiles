@@ -34,14 +34,16 @@ inoremap jk <Esc>
 " in insert mode, insert space after current cursor position without moving
 inoremap <leader><leader> <Space><C-o>h
 
-" insert blank line below current line, stay at orig position; stay in original mode;
-" (clobbers reg o)
-nnoremap <C-j> moo<Esc>`o
-inoremap <C-j> <Esc>lmoo<Esc>`oi|   " l compensates for cursor left shift on exiting insert mode
+" insert blank line below current line, stay at orig position; stay in original mode
+" (clobbers mark o to use as temporary location; undo will unfortunately restore the mark)
+nnoremap <C-j> moo<Esc>`o:delmark o<CR>
+" -- on next line, `l' compensates for cursor left shift on exiting insert mode
+inoremap <C-j> <Esc>lmoo<Esc>`o:delmark o<CR>i
 
 " shift current line down, stay on new empty line; stay in original mode
 nnoremap <C-k> O<Esc>0D
-inoremap <C-k> <Esc>O<Esc>0C|  " 0C clears line since nopaste option not supported
+" -- on next line, 0C clears line since nopaste option not supported
+inoremap <C-k> <Esc>O<Esc>0C
 
 " append semicolon at end of line; in insert mode, also append newline
 nnoremap <C-;> A;<Esc>

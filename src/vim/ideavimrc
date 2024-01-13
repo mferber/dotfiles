@@ -10,3 +10,6 @@ set idearefactormode=keep
 nmap <leader>qq <Action>(QuickJavaDoc)
 nmap <leader>qd <Action>(QuickImplementations)
 nmap <leader>qf <Action>(Javascript.Linters.EsLint.Fix)
+
+nmap <leader>r <Action>(Run)
+nmap <leader>rr <Action>(Rerun)

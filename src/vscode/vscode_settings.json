@@ -68,5 +68,6 @@
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
     "workbench.colorTheme": "Default Dark+ Experimental",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "vim.vimrc.enable": true
 }

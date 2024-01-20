@@ -5,11 +5,49 @@ source ~/.vimrc
 set ideajoin
 set idearefactormode=keep
 
+""" Plugins
+
+set which-key
+set timeoutlen=5000
+
 """ Custom mappings for JetBrains IDEs
 
-nmap <leader>qq <Action>(QuickJavaDoc)
-nmap <leader>qd <Action>(QuickImplementations)
-nmap <leader>qf <Action>(Javascript.Linters.EsLint.Fix)
+"" Navigation
 
+" File navigation and searching
+nmap <leader>nr <action>(RecentFiles)
+nmap <leader>nl <action>(RecentLocations)
+nmap <leader>nf <action>(GotoFile)
+nmap <leader>ns <action>(GotoSymbol)
+nmap <leader>fp <action>(FindInPath)
+
+" Code navigation
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+
+" Version control actions
+nmap <leader>vr <Action>(Vcs.RollbackChangedLines)
+
+" Split windows
+nmap <leader>ws <Action>(SplitVertically)
+nmap <leader>wh <Action>(SplitHorizontally)
+nmap <leader>wu <Action>(Unsplit)
+nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" Jump between methods
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
+" Quick reference
+nnoremap <leader>qq <Action>(QuickJavaDoc)
+nnoremap <leader>qd <Action>(QuickImplementations)
+
+" Run & debug
 nmap <leader>r <Action>(Run)
 nmap <leader>rr <Action>(Rerun)
+
+" Display mode
+nmap <leader>dd <action>(ToggleDistractionFreeMode)

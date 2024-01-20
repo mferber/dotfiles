@@ -28,14 +28,19 @@ set hlsearch
 
 """ Custom mappings
 
+" Space key is leader
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 " alternative esc remap experiment
 inoremap jk <Esc>
 
+" in visual mode, reselect block after indent/outdent, to allow repeating
+vnoremap < <gv
+vnoremap > >gv
+
 " in insert mode, insert space after current cursor position without moving
-inoremap <leader><leader> <Space><C-o>h
+inoremap \\\\ <Space><C-o>h
 
 " insert blank line below current line, stay at orig position; stay in original mode
 " (clobbers mark o to use as temporary location; undo will unfortunately restore the mark)

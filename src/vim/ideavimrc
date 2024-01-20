@@ -7,6 +7,7 @@ set idearefactormode=keep
 
 """ Plugins
 
+set sneak
 set which-key
 set timeoutlen=5000
 

@@ -9,6 +9,8 @@ export MAF_CONFIG_BASE_DIR=$(readlink -f $(dirname $(readlink -f $0))/..)
 export PATH="/opt/homebrew/bin:$PATH"
 # ...version managers -- these should come last!
 export PATH="$HOME/bin:$HOME/.rvm/bin:$PATH"
+# ...pipx
+export PATH="$PATH:$HOME/.local/bin"
 
 autoload -U compinit
 compinit

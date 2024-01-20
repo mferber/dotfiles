@@ -28,6 +28,9 @@ set hlsearch
 
 """ Custom mappings
 
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 " alternative esc remap experiment
 inoremap jk <Esc>
 

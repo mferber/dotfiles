@@ -255,10 +255,12 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # TOAST - OTHER
 ##################################################
 
+# Docker daemon location (under Colima)
+export DOCKER_HOST=unix:///Users/matthias/.colima/default/docker.sock
+
+# TestContainers Docker location
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+
 # Fixes problem with integration tests failing under Colima
 # (not sure it should be active all the time, but trying it out)
 export TESTCONTAINERS_RYUK_DISABLED=true
-
-# Created by `pipx` on 2022-09-21 19:47:14
-export PATH="$PATH:/Users/matthias/.local/bin"
-export DOCKER_HOST=unix:///Users/matthias/.colima/default/docker.sock

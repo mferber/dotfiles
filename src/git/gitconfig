@@ -51,6 +51,9 @@
 	# which branch am I on?
 	wb = branch --show-current
 
+  # choose pathname to a modified file and put on clipboard
+	df = "!git st | fzf | sed -E 's/^[ A-Z]{2} //' | pbcopy"
+
 	# find the main branch for this repo
 	main = "!git for-each-ref --format='%(refname:short)' --sort='-committerdate' 'refs/heads/main' 'refs/heads/develop' 'refs/heads/master' | head -1 | awk '{print $1}'"
 

@@ -25,6 +25,7 @@ let g:argtextobj_pairs="[:],(:),<:>"
 set showmode
 set incsearch
 set hlsearch
+set relativenumber
 
 """ Custom mappings
 

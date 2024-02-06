@@ -16,6 +16,7 @@ set timeoutlen=5000
 "" Navigation
 
 " File navigation and searching
+nmap <leader>np <action>(RecentProjectListGroup)
 nmap <leader>nr <action>(RecentFiles)
 nmap <leader>nl <action>(RecentLocations)
 nmap <leader>nf <action>(GotoFile)

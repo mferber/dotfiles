@@ -243,6 +243,12 @@ function ghb {
   unset GH_BRANCH
 }
 
+# toast-feature-flag conveniences for querying flag value in main environments
+function tffiprod { toast-feature-flags inspect flag -e production $1 }
+function tffipre { toast-feature-flags inspect flag -e preproduction $1 }
+function tffiloc { toast-feature-flags inspect flag -e local-dev-shared $1 }
+
+
 ##################################################
 # TOAST STANDARD SETUP
 ##################################################

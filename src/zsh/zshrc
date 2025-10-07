@@ -102,6 +102,10 @@ alias d3='pushd +3'
 alias d4='pushd +4'
 alias d5='pushd +5'
 
+# xh: override default behavior for pretty-printing, e.g. when piping to less -r
+alias xhp='xh --pretty=all'
+
+
 ##################################################
 # FUNCTIONS
 ##################################################

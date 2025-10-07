@@ -105,6 +105,10 @@ alias d5='pushd +5'
 # xh: override default behavior for pretty-printing, e.g. when piping to less -r
 alias xhp='xh --pretty=all'
 
+# xh: alias httpie commands to use xh instead
+# This is mostly to allow xh use with code generators that are made for httpie
+alias http='xh'
+alias https='xh'
 
 ##################################################
 # FUNCTIONS

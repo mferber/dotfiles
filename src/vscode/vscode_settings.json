@@ -44,7 +44,6 @@
     "editor.parameterHints.enabled": false,
     "workbench.tree.indent": 20,
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.autoClosingBrackets": "never",
     "vim.showMarksInGutter": true,
 
     "todo-tree.highlights.defaultHighlight": {
@@ -69,5 +68,9 @@
     "terminal.integrated.macOptionIsMeta": true,
     "workbench.colorTheme": "Default Dark+ Experimental",
     "editor.minimap.enabled": false,
-    "vim.vimrc.enable": true
+    "vim.vimrc.enable": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.language.colorizedBracketPairs": [],
+    "editor.language.brackets": [],
+    "workbench.activityBar.location": "top",
 }

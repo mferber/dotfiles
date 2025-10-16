@@ -23,6 +23,9 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt AUTO_NAME_DIRS
 HISTSIZE=200
 
+# Activate mise-en-place
+source $MAF_CONFIG_BASE_DIR/zsh/mise-activate
+
 # Command completion
 if [ -f  ~/.zsh/npm_autocomplete.sh ]; then
 source ~/.zsh/npm_autocomplete.sh

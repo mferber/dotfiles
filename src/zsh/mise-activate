@@ -1,0 +1,83 @@
+export MISE_SHELL=zsh
+export __MISE_ORIG_PATH="$PATH"
+
+mise() {
+  local command
+  command="${1:-}"
+  if [ "$#" = 0 ]; then
+    command /opt/homebrew/bin/mise
+    return
+  fi
+  shift
+
+  case "$command" in
+  deactivate|shell|sh)
+    # if argv doesn't contains -h,--help
+    if [[ ! " $@ " =~ " --help " ]] && [[ ! " $@ " =~ " -h " ]]; then
+      eval "$(command /opt/homebrew/bin/mise "$command" "$@")"
+      return $?
+    fi
+    ;;
+  esac
+  command /opt/homebrew/bin/mise "$command" "$@"
+}
+
+_mise_hook() {
+  eval "$(/opt/homebrew/bin/mise hook-env -s zsh)";
+}
+typeset -ag precmd_functions;
+if [[ -z "${precmd_functions[(r)_mise_hook]+1}" ]]; then
+  precmd_functions=( _mise_hook ${precmd_functions[@]} )
+fi
+typeset -ag chpwd_functions;
+if [[ -z "${chpwd_functions[(r)_mise_hook]+1}" ]]; then
+  chpwd_functions=( _mise_hook ${chpwd_functions[@]} )
+fi
+
+_mise_hook
+if [ -z "${_mise_cmd_not_found:-}" ]; then
+    _mise_cmd_not_found=1
+    # preserve existing handler if present
+    if typeset -f command_not_found_handler >/dev/null; then
+        functions -c command_not_found_handler _command_not_found_handler
+    fi
+
+    typeset -gA _mise_cnf_tried
+
+    # helper for fallback behavior
+    _mise_fallback() {
+        local _cmd="$1"; shift
+        if typeset -f _command_not_found_handler >/dev/null; then
+            _command_not_found_handler "$_cmd" "$@"
+            return $?
+        else
+            print -u2 -- "zsh: command not found: $_cmd"
+            return 127
+        fi
+    }
+
+    command_not_found_handler() {
+        local cmd="$1"; shift
+
+        # never intercept mise itself or retry already-attempted commands
+        if [[ "$cmd" == "mise" || "$cmd" == mise-* || -n "${_mise_cnf_tried["$cmd"]}" ]]; then
+            _mise_fallback "$cmd" "$@"
+            return $?
+        fi
+
+        # run the hook; only retry if the command is actually found afterward
+        if /opt/homebrew/bin/mise hook-not-found -s zsh -- "$cmd"; then
+            _mise_hook
+            if command -v -- "$cmd" >/dev/null 2>&1; then
+                "$cmd" "$@"
+                return $?
+            fi
+        else
+            # only mark as tried if mise explicitly can't handle it
+            _mise_cnf_tried["$cmd"]=1
+        fi
+
+        # fall back
+        _mise_fallback "$cmd" "$@"
+    }
+fi

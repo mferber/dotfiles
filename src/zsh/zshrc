@@ -105,6 +105,14 @@ alias d3='pushd +3'
 alias d4='pushd +4'
 alias d5='pushd +5'
 
+# mise
+alias mr='mise run'
+alias mu='mise use'
+alias mi='mise install'
+
+# python
+alias pmpip='python -m pip'
+
 # xh: override default behavior for pretty-printing, e.g. when piping to less -r
 alias xhp='xh --pretty=all'
 

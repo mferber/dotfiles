@@ -3,3 +3,8 @@
 #
 .DS_Store
 .Trashes
+
+#
+# Mise
+#
+mise.local.toml

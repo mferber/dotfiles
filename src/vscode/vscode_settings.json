@@ -12,6 +12,7 @@
     // zero = dotted zero instead of slashed
     // onum = old-style numerals
     "editor.fontLigatures": "'ss02', 'ss03', 'ss04', 'ss07', 'zero', 'onum'",
+
     "workbench.startupEditor": "none",
     "files.associations": {
         "*.log": "log"
@@ -66,8 +67,6 @@
     "editor.unicodeHighlight.nonBasicASCII": false,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.macOptionIsMeta": true,
-    "workbench.colorTheme": "Default Dark+ Experimental",
-    "editor.minimap.enabled": false,
     "vim.vimrc.enable": true,
     "editor.guides.bracketPairs": "active",
     "editor.language.colorizedBracketPairs": [],
@@ -77,5 +76,8 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.tabSize": 4,
-    }
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.colorTheme": "Chalked Up",
+    "editor.semanticHighlighting.enabled": false,
 }

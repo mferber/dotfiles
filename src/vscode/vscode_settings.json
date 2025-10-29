@@ -71,7 +71,6 @@
     "editor.guides.bracketPairs": "active",
     "editor.language.colorizedBracketPairs": [],
     "editor.language.brackets": [],
-    "workbench.activityBar.location": "top",
 
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",

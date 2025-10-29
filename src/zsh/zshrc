@@ -111,6 +111,7 @@ alias mu='mise use'
 alias mi='mise install'
 
 # python
+alias ur='uv run'
 alias pmpip='python -m pip'
 
 # xh: override default behavior for pretty-printing, e.g. when piping to less -r

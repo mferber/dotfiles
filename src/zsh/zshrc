@@ -12,8 +12,11 @@ export PATH="$HOME/bin:$HOME/.rvm/bin:$PATH"
 # ...pipx
 export PATH="$PATH:$HOME/.local/bin"
 
-autoload -U compinit
+
+FPATH="$MAF_CONFIG_BASE_DIR/zsh/docker_completions:$FPATH" # enable docker autocompletion
+autoload -Uz compinit
 compinit
+
 setopt complete_in_word
 setopt auto_list
 

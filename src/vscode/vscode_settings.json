@@ -44,7 +44,7 @@
     "vim.replaceWithRegister": true,
     "editor.parameterHints.enabled": false,
     "workbench.tree.indent": 20,
-    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnEnter": "smart",
     "vim.showMarksInGutter": true,
 
     "todo-tree.highlights.defaultHighlight": {

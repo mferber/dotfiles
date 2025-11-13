@@ -10,6 +10,8 @@ function main {
     install vim/vimrc ~/.vimrc
     install vscode/vscode_settings.json ~/Library/'Application Support'/Code/User/settings.json
     install vscode/vscode_settings.json ~/Library/'Application Support'/VSCodium/User/settings.json
+    install vscode/vscode_keybindings.json ~/Library/'Application Support'/Code/User/keybindings.json
+    install vscode/vscode_keybindings.json ~/Library/'Application Support'/VSCodium/User/keybindings.json
     install vim/ideavimrc ~/.ideavimrc
     install vlc/vlcrc ~/Library/Preferences/org.videolan.vlc/vlcrc
     install hammerspoon/dot_hammerspoon ~/.hammerspoon

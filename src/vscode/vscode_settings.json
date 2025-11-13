@@ -32,7 +32,7 @@
     "markdown.styles": [
         "styles/Markdown-preview.css"
     ],
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontSize": 15,
     "vim.camelCaseMotion.enable": true,
     "vim.cursorStylePerMode.replace": "block-outline",
     "vim.cursorStylePerMode.visual": "block-outline",
@@ -79,4 +79,6 @@
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.colorTheme": "Chalked Up",
     "editor.semanticHighlighting.enabled": false,
+    "terminal.integrated.fontFamily": "Iosevka",
+    "terminal.integrated.fontLigatures.enabled": true,
 }

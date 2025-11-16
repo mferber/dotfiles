@@ -156,7 +156,11 @@ macdown() {
 
 # get name of current repo
 function cur_repo {
-  git remote -v | grep 'fetch)$'| sed -E 's/(^.*:)|((\.git)?[[:space:]]\([^[:space:]]+\)$)//g'
+  # Remove everything (remote name, start of URL) up to last applicable ':' (git urls)
+  #   or '/' (https and ssh urls)
+  # Extract user/repo portion, delimited by .git suffix -- this is preserved as \1
+  # Remove .git and remainder of line
+  git remote -v | grep '\(fetch\)$' | sed -E 's/^.*[\/:]([[:alnum:]._-]+\/[[:alnum:]._-]+)\.git.*$/\1/'
 }
 
 # open GitHub to the current repo

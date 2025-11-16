@@ -73,7 +73,7 @@
     "editor.language.brackets": [],
 
     "[python]": {
-        "editor.defaultFormatter": "mikoz.black-py",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.tabSize": 4,
     },
     "workbench.secondarySideBar.defaultVisibility": "hidden",

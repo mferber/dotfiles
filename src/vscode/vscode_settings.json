@@ -27,7 +27,6 @@
     "window.nativeFullScreen": false,
     "window.newWindowDimensions": "maximized",
     "editor.fontWeight": "100",
-    "markdown-preview-enhanced.breakOnSingleNewLine": false,
     "markdown.preview.fontSize": 16,
     "markdown.styles": [
         "styles/Markdown-preview.css"

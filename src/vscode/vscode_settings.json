@@ -81,4 +81,5 @@
     "editor.semanticHighlighting.enabled": false,
     "terminal.integrated.fontFamily": "Iosevka",
     "terminal.integrated.fontLigatures.enabled": true,
+    "redhat.telemetry.enabled": false,
 }

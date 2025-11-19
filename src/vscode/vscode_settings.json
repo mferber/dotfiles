@@ -82,6 +82,7 @@
     "terminal.integrated.fontLigatures.enabled": true,
     "redhat.telemetry.enabled": false,
     "files.exclude": {
-        "**/__pycache__": true
+        "**/__pycache__": true,
+        "**/.ruff_cache": true
     },
 }

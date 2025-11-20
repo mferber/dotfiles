@@ -42,7 +42,7 @@
     "editor.tabSize": 2,
     "vim.replaceWithRegister": true,
     "editor.parameterHints.enabled": false,
-    "workbench.tree.indent": 10,
+    "workbench.tree.indent": 15,
     "editor.acceptSuggestionOnEnter": "smart",
     "vim.showMarksInGutter": true,
 

@@ -85,4 +85,5 @@
         "**/__pycache__": true,
         "**/.ruff_cache": true
     },
+    "explorer.compactFolders": false,
 }

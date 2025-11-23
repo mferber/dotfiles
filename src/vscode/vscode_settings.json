@@ -45,20 +45,14 @@
     "workbench.tree.indent": 15,
     "editor.acceptSuggestionOnEnter": "smart",
     "vim.showMarksInGutter": true,
-
     "todo-tree.highlights.defaultHighlight": {
+        "icon": "alert",
         "foreground": "#000",
         "background": "#ff0",
         "fontWeight": "bold",
-        "borderRadius": "2px",
+        "borderRadius": "3px",
         "gutterIcon": true,
-        "iconColour": "#ff0",
-    },
-    "todo-tree.highlights.customHighlight": {
-        "TODO": {
-            "background": "#0f0",
-            "iconColour": "#8f0"
-        }
+        "iconColour": "#cc0",
     },
     "todo-tree.tree.tooltipFormat": "${tag} ${afterOrBefore}",
     "gitlens.currentLine.enabled": false,

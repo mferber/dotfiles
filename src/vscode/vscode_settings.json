@@ -80,4 +80,7 @@
         "**/.ruff_cache": true
     },
     "explorer.compactFolders": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }

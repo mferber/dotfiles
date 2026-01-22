@@ -89,9 +89,8 @@ fi
 # Simple command shortcuts
 alias grep=egrep
 alias ll='ls -lF'
-alias x='exa -F'
-alias xl='exa -lF --git'
-alias md='macdown'
+alias x='eza -F'
+alias xl='eza -lF --git'
 alias code='codium'
 alias t='tail -50'
 alias tt='tail -150'

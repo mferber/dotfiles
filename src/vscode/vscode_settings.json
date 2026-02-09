@@ -98,4 +98,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.linkedEditing": true,
+    "basedpyright.analysis.inlayHints.callArgumentNames": false,
+    "basedpyright.analysis.inlayHints.functionReturnTypes": false,
+    "basedpyright.analysis.inlayHints.genericTypes": false,
+    "basedpyright.analysis.inlayHints.variableTypes": false
 }

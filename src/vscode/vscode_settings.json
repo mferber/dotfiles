@@ -94,4 +94,5 @@
     "html.autoClosingTags": false,
     "javascript.autoClosingTags": false,
     "typescript.autoClosingTags": false
+    "editor.linkedEditing": true,
 }

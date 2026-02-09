@@ -94,5 +94,8 @@
     "html.autoClosingTags": false,
     "javascript.autoClosingTags": false,
     "typescript.autoClosingTags": false
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "editor.linkedEditing": true,
 }

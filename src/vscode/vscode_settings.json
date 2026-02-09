@@ -80,6 +80,9 @@
         "**/.ruff_cache": true
     },
     "explorer.compactFolders": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -93,10 +96,7 @@
     },
     "html.autoClosingTags": false,
     "javascript.autoClosingTags": false,
-    "typescript.autoClosingTags": false
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    "typescript.autoClosingTags": false,
     "editor.linkedEditing": true,
     "basedpyright.analysis.inlayHints.callArgumentNames": false,
     "basedpyright.analysis.inlayHints.functionReturnTypes": false,

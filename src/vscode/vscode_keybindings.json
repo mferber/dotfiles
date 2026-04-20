@@ -34,5 +34,21 @@
   {
     "key": "shift+cmd+t",
     "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "cmd+k right",
+    "command": "-workbench.action.moveActiveEditorGroupRight"
+  },
+  {
+    "key": "cmd+k right",
+    "command": "workbench.action.moveEditorToRightGroup"
+  },
+  {
+    "key": "cmd+k left",
+    "command": "-workbench.action.moveActiveEditorGroupLeft"
+  },
+  {
+    "key": "cmd+k left",
+    "command": "workbench.action.moveEditorToLeftGroup"
   }
 ]

@@ -124,6 +124,13 @@ alias xhp='xh --pretty=all'
 alias http='xh'
 alias https='xh'
 
+# File Provider local sync checks
+
+alias fp_check_dropbox="find_fileprovider_undownloaded ~/Library/CloudStorage/Dropbox/"
+alias fp_check_icloud="find_fileprovider_undownloaded ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias fp_check="echo "\""DROPBOX:"\""; fp_check_dropbox; echo "\""\niCLOUD DRIVE:\n"\""; fp_check_icloud"
+
+
 ##################################################
 # FUNCTIONS
 ##################################################
@@ -142,6 +149,43 @@ d() {
 # ripgrep with pager (less)
 rgl() {
   rg --pretty --color=always $1 | less -R
+}
+
+
+
+# find files in a File Provider-synced directory (like iCloud Drive, or Dropbox
+# running with File Provider support) that are not currently downloaded locally
+# (function from ChatGPT with tweaks)
+find_fileprovider_undownloaded() {
+  emulate -L zsh
+  setopt pipefail
+  
+  if (( $# == 0 )); then
+    print -u2 "Usage: find_fileprovider_undownloaded <dir> [dir ...]"
+    return 2
+  fi
+
+  local dir f size blocks found=0
+  for dir in "$@"; do
+    if [[ ! -d "$dir" ]]; then
+      print -u2 "Skipping (not a directory): $dir"
+      continue
+    fi
+    find "$dir" -type f -print0 |
+      while IFS= read -r -d '' f; do
+        # Get logical size (%z) and allocated blocks (%b)
+        set -- $(stat -f "%z %b" "$f" 2>/dev/null) || continue
+        size=$1
+        blocks=$2
+        # If logical size is nonzero and allocated blocks is zero, that
+        # indicates that the file is remote-only and not downloaded locally
+        if [[ "$size" -gt 0 && "$blocks" -eq 0 ]]; then
+          printf '%s\n' "$f"
+          found=1
+        fi
+      done
+  done
+  return $found
 }
 
 # launch MacDown (supports creating file)
